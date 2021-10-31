@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Calculator pret fara TVA</title>
+		<link rel="shortcut icon" type="image/jpg" href="tva.jpeg">
+		
+		<style type="text/css">
+		
+			body{
+					background-image: url('a.jpg');
+					background-repeat: no-repeat;
+				}
+				
+			.box{
+					width: 40%;
+					height: 30%;
+					background-color: #ffffff;
+					box-shadow: 0 14px 16px 0 rgba(0,0,0,0.3);
+					border-radius: 10px;
+					margin-top: 8%;
+				}
+				
+			h2{
+					font-family: corbel;
+					color: #808080;
+					padding-top: 10%;
+					font-weight: bold;
+				}
+				
+			input{
+					margin-top: 5%;
+					width: 55%;
+					font-family: consolas;
+					height: 50px;
+					padding-left: 2%;
+					border: none;
+					background-color: #eaeaea;
+					border-radius: 5px;
+				}
+				
+			::placeholder{
+					color: #404040;
+				
+				}
+				
+			.button1{
+					margin-top: 5%;
+					padding: 14px;
+					width: 57%;
+					background-color: #878787;
+					border: none;
+					border-radius: 5px;
+					color: white;
+					font-family: consolas;
+					cursor: pointer;
+					font-size: 15px;
+					outline: none;
+			}
+			
+			.button1:hover{
+					background-color: #757575;
+			}
+
+			th{
+					font-family: corbel;
+					color: #404040;
+					background-color: orange;
+					padding: 10px;
+				}
+			
+			td{
+					font-family: consolas;
+					color: #404040;
+					background-color: #d5dcd9;
+					padding: 10px;
+					text-align: right;
+				}
+			
+				
+		</style>
+		
+	</head>
+	
+	<body>
+	
+		<script>
+		function tva(){
+			var input=document.getElementById('tva').value;
+			var pretfaratva=(input/1.19);
+			var tva=input-pretfaratva;
+			document.getElementById('td1').innerHTML=input;
+			document.getElementById('td2').innerHTML=tva.toFixed(3);
+			document.getElementById('td3').innerHTML=pretfaratva.toFixed(3);
+			document.getElementById('tva').value='';
+			}
+			
+		</script>
+	
+		<center>
+			<div class="box">
+				<h2>Calculeaza pretul fara TVA</h2>
+				<input type="text" id="tva" placeholder="Pret cu TVA" autofocus />
+				<br>
+				<button class='button1' id='b1' onclick="tva()">Calculeaza</button>
+				
+				<table border='0' style="margin-top: 5%;">
+					<tr>
+						<th>Pret cu TVA</th>
+						<th>Valoare TVA</th>
+						<th>Pret fara TVA</th>
+					</tr>
+					
+					<tr>
+						<td id="td1"></td>
+						<td id="td2"></td>
+						<td style="font-weight: bold;" id="td3"></td>
+					</tr>
+					
+				</table>
+				
+				<br>
+				<br>
+				<br>
+		
+			</div>
+			
+		</body>
+</html>
